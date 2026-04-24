@@ -31,11 +31,4 @@ build/
 
 ### VS Code ###
 .vscode/
-PS C:\Users\Admin\Desktop\social-network> git --version
-git : Имя "git" не распознано как имя командлета, функции, файла сценария или выполняемой программы. Проверьте правильность написания имени, а такж
-е наличие и правильность пути, после чего повторите попытку.
-строка:1 знак:1
-+ git --version
-+ ~~~
-    + CategoryInfo          : ObjectNotFound: (git:String) [], CommandNotFoundException
-    + FullyQualifiedErrorId : CommandNotFoundException
+.env

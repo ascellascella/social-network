@@ -11,26 +11,37 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private UserRepository repo;
+    private UserRepository repository;
 
+    // CREATE - создать пользователя
     @PostMapping
-    public User create(@RequestBody User user) { return repo.save(user); }
+    public User create(@RequestBody User user) {
+        return repository.save(user);
+    }
 
+    // READ - получить всех пользователей
     @GetMapping
-    public List<User> getAll() { return repo.findAll(); }
+    public List<User> getAll() {
+        return repository.findAll();
+    }
 
+    // READ - получить пользователя по ID
     @GetMapping("/{id}")
-    public User getOne(@PathVariable Long id) { return repo.findById(id).orElse(null); }
+    public User getOne(@PathVariable Long id) {
+        return repository.findById(id).orElse(null);
+    }
 
+    // UPDATE - обновить пользователя
     @PutMapping("/{id}")
     public User update(@PathVariable Long id, @RequestBody User user) {
         user.setId(id);
-        return repo.save(user);
+        return repository.save(user);
     }
 
+    // DELETE - удалить пользователя
     @DeleteMapping("/{id}")
     public String delete(@PathVariable Long id) {
-        repo.deleteById(id);
-        return "deleted";
+        repository.deleteById(id);
+        return "User deleted";
     }
 }
